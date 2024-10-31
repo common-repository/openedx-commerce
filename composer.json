@@ -1,0 +1,50 @@
+{
+	"name": "php-actions/example-phpunit",
+	"description": "Example project using php-actions/phpunit",
+
+	"require-dev": {
+		"ext-curl": "*",
+		"ext-dom": "*",
+		"ext-json": "*",
+		"ext-sqlite3": "*",
+		"phpunit/phpunit": "^9.6",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
+    	"wp-coding-standards/wpcs": "^3.0"
+	},
+	"config": {
+	    "allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		},
+		"platform": {
+			"php": "8.0.7"
+		}
+	},
+	"autoload": {
+		"classmap": [
+			"includes/model/",
+			"admin/",
+			"admin/views/",
+			"public/",
+			"utils/"
+		],
+		"psr-4": {
+			"OpenedX_Commerce\\": "includes/",
+			"OpenedX_Commerce\\model\\": "includes/model/",
+			"OpenedX_Commerce\\admin\\": "admin/",
+			"OpenedX_Commerce\\admin\\views\\": "admin/views/",
+			"OpenedX_Commerce\\public\\": "public/",
+			"OpenedX_Commerce\\utils\\": "utils/"
+		}
+	},
+	"autoload-dev": {
+		"classmap": [
+			"test/"
+		],
+		"psr-4": {
+			"OpenedX_Commerce\\tests\\": "test/"
+		}
+	},
+	"require": {
+		"guzzlehttp/guzzle": "^7.7"
+	}
+}
